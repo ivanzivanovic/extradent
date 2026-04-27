@@ -336,7 +336,7 @@ section { padding: 120px 48px; position: relative; }
     bottom: 0; left: 0; right: 0;
     z-index: 2;
     max-width: 100%;
-    padding: 0 22px 32px;
+    padding: 0 22px 96px;
     color: #fff;
   }
   .hero__copy .eyebrow { display: none; }
@@ -351,9 +351,15 @@ section { padding: 120px 48px; position: relative; }
   .hero__ctas .btn--ghost { border-color: rgba(255,255,255,0.4); color: #fff; }
 
   /* Quick contact — sticky bar at bottom of viewport */
-  .hero__quickContact .contact__quickBtn--wa    { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(37,211,102,0.85); }
-  .hero__quickContact .contact__quickBtn--viber { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(115,96,242,0.85); }
-  .hero__quickContact .contact__quickBtn--call  { background: rgba(255,255,255,0.15); color: #fff; border-color: var(--gold); }
+  .hero__quickContact .contact__quickBtn {
+    background: rgba(20,16,14,0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: #fff;
+  }
+  .hero__quickContact .contact__quickBtn--wa    { border-color: rgba(37,211,102,0.85); }
+  .hero__quickContact .contact__quickBtn--viber { border-color: rgba(115,96,242,0.85); }
+  .hero__quickContact .contact__quickBtn--call  { border-color: var(--gold); }
 
   /* Service cards compact */
   .serviceCard { padding: 16px 14px; gap: 12px; }
@@ -907,7 +913,7 @@ section { padding: 120px 48px; position: relative; }
 .contact__quickBtn--viber { background: var(--bg-3); color: var(--ink); border: 3px solid #7360F2; }
 .contact__quickBtn--call  { background: var(--bg-3); color: var(--ink); border: 3px solid var(--gold); }
 
-/* Sticky bottom bar on mobile — fixed at bottom of viewport, semi-transparent */
+/* Sticky bottom bar on mobile — fixed at bottom of viewport, no background strip */
 @media (max-width: 768px) {
   .hero__quickContact {
     display: flex;
@@ -917,13 +923,13 @@ section { padding: 120px 48px; position: relative; }
     gap: 8px;
     padding: 10px 14px;
     padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-    background: linear-gradient(to top, rgba(20,16,14,0.78), rgba(20,16,14,0.55));
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: transparent;
+    pointer-events: none;
   }
   .hero__quickContact .contact__quickBtn {
     flex: 1; justify-content: center;
     padding: 10px 8px; font-size: 11px; gap: 6px;
+    pointer-events: auto;
   }
   .hero__quickContact .contact__quickBtn svg { width: 18px; height: 18px; }
   body { padding-bottom: 76px; }
