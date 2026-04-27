@@ -180,7 +180,7 @@ function About({ t }) {
   return (
     <section id="about" className="about">
       <div className="about__mobileIntro">
-        <p>Extradent je privatna ordinacija dr Ivane Pejović Božović — sertifikovanog doktora stomatologije i estetske medicine. Vrhunska njega u srcu Podgorice, sa pažnjom prema svakom detalju vašeg lica i osmijeha.</p>
+        <p>{t.hero.sub}</p>
       </div>
       <div className="about__inner">
         <div className="about__visual">

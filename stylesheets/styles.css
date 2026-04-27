@@ -663,6 +663,9 @@ section { padding: 120px 48px; position: relative; }
   border-top: 1px solid var(--line-2);
   padding-top: 32px;
 }
+@media (max-width: 768px) {
+  .contact__items { grid-template-columns: 1fr; gap: 20px; }
+}
 .contactItem--wide { grid-column: 1 / -1; }
 .contactItem__lab { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
 .contactItem__val { font-size: 16px; color: var(--ink); line-height: 1.5; }
@@ -682,6 +685,18 @@ section { padding: 120px 48px; position: relative; }
   border-radius: 4px; overflow: hidden;
   border: 1px solid var(--line);
   background: var(--bg-2);
+}
+@media (max-width: 768px) {
+  .contact__map {
+    aspect-ratio: 16/11;
+    min-height: 240px;
+    max-height: 320px;
+  }
+  .contact__mapOverlay { bottom: 12px; left: 12px; right: 12px; padding: 12px 14px; }
+  .contact__mapPin { width: 44px; height: 44px; }
+  .contact__mapPin img { width: 32px; height: 32px; }
+  .contact__mapTitle { font-size: 18px; }
+  .contact__mapAddr { font-size: 12px; }
 }
 .contact__map iframe { filter: var(--map-filter); }
 .contact__mapOverlay {
@@ -879,7 +894,6 @@ section { padding: 120px 48px; position: relative; }
 }
 
 /* Quick contact buttons (WhatsApp / Viber / Call) */
-.contact__ctas--mobile { display: none; }
 .hero__quickContact { display: none; }
 
 .contact__quickBtn {
@@ -893,16 +907,53 @@ section { padding: 120px 48px; position: relative; }
 .contact__quickBtn:hover { opacity: 0.85; transform: translateY(-1px); }
 .contact__quickBtn--wa    { background: var(--bg-3); color: var(--ink); border: 3px solid #25D366; }
 .contact__quickBtn--viber { background: var(--bg-3); color: var(--ink); border: 3px solid #7360F2; }
-.contact__quickBtn--call  { background: var(--bg-3); color: var(--ink); border: 2px solid var(--line); }
+.contact__quickBtn--call  { background: var(--bg-3); color: var(--ink); border: 3px solid var(--gold); }
 
 @media (max-width: 768px) {
-  .contact__ctas--mobile {
-    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;
-  }
   .hero__quickContact {
     display: flex; gap: 10px; margin-bottom: 32px; flex-wrap: wrap;
   }
   .hero__quickContact .contact__quickBtn { flex: 1; justify-content: center; padding: 11px 12px; font-size: 12px; }
+}
+
+/* Mobile sticky bottom action bar */
+.mobileBar { display: none; }
+@media (max-width: 768px) {
+  .mobileBar {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 50;
+    gap: 8px;
+    padding: 10px 12px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    background: var(--chrome-strong, var(--bg-2));
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line);
+  }
+  .mobileBar .contact__quickBtn {
+    flex: 1; justify-content: center;
+    padding: 11px 8px; font-size: 12px;
+    gap: 6px;
+  }
+  .mobileBar .contact__quickBtn svg { width: 18px; height: 18px; }
+  body { padding-bottom: 76px; }
+}
+
+/* Instagram contact item — colored logo + bigger on mobile */
+.contactItem--ig .contact__ig {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 16px; color: var(--ink); line-height: 1.5;
+  transition: opacity 0.2s;
+}
+.contactItem--ig .contact__ig:hover { opacity: 0.8; }
+.contact__igFrame, .contact__igLens { stroke: url(#igGrad); }
+.contact__igDot { fill: url(#igGrad); }
+@media (max-width: 768px) {
+  .contactItem--ig .contact__ig { font-size: 20px; font-weight: 500; gap: 14px; }
+  .contactItem--ig .contact__igIcon { width: 36px; height: 36px; }
+  .contactItem--ig .contact__igFrame,
+  .contactItem--ig .contact__igLens { stroke-width: 1.8; }
 }
 
 /* Tweaks panel adjustments */

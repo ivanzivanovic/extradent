@@ -41,6 +41,30 @@ function Contact({ t, onBook }) {
               <div className="contactItem__val">Njegoševa 18<br/>Podgorica, Crna Gora</div>
             </div>
             <div className="contactItem">
+              <div className="contactItem__lab">{t.contact.hoursLab}</div>
+              <div className="contactItem__val">{t.contact.hours}<br/><span className="contactItem__valDim">{t.contact.hoursWeekend}</span></div>
+            </div>
+            <div className="contactItem contactItem--ig">
+              <div className="contactItem__lab">Instagram</div>
+              <a className="contact__ig" href="https://www.instagram.com/extradent_podgorica/" target="_blank" rel="noopener">
+                <svg className="contact__igIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <defs>
+                    <linearGradient id="igGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#feda75"/>
+                      <stop offset="25%" stopColor="#fa7e1e"/>
+                      <stop offset="50%" stopColor="#d62976"/>
+                      <stop offset="75%" stopColor="#962fbf"/>
+                      <stop offset="100%" stopColor="#4f5bd5"/>
+                    </linearGradient>
+                  </defs>
+                  <rect className="contact__igFrame" x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle className="contact__igLens" cx="12" cy="12" r="4"/>
+                  <circle className="contact__igDot" cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                </svg>
+                <span>@extradent_podgorica</span>
+              </a>
+            </div>
+            <div className="contactItem">
               <div className="contactItem__lab">{t.contact.phoneLab}</div>
               <a className="contactItem__val contactItem__link" href="tel:+38220665625">+382 20 665 625</a>
             </div>
@@ -52,30 +76,7 @@ function Contact({ t, onBook }) {
               <div className="contactItem__lab">{t.contact.emailLab}</div>
               <a className="contactItem__val contactItem__link" href="mailto:extradentpodgorica@gmail.com">extradentpodgorica@gmail.com</a>
             </div>
-            <div className="contactItem contactItem--wide">
-              <div className="contactItem__lab">{t.contact.hoursLab}</div>
-              <div className="contactItem__val">{t.contact.hours}<br/><span className="contactItem__valDim">{t.contact.hoursWeekend}</span></div>
-            </div>
           </div>
-
-          <div className="contact__ctas contact__ctas--mobile">
-            <a className="contact__quickBtn contact__quickBtn--wa" href="https://wa.me/38269642892" target="_blank" rel="noopener">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.932-1.418A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.946 7.946 0 0 1-4.073-1.118l-.292-.173-3.031.872.85-3.097-.19-.302A7.96 7.96 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
-              WhatsApp
-            </a>
-            <a className="contact__quickBtn contact__quickBtn--viber" href="viber://chat?number=38269642892">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.996 2c-5.14 0-9.5 4.2-9.5 9.5 0 2.3.82 4.44 2.2 6.12L3 22l4.5-1.66A9.47 9.47 0 0 0 12 21.5c5.14 0 9.5-4.2 9.5-9.5S17.136 2 11.996 2zm4.68 13.27c-.22.62-1.08 1.14-1.76 1.28-.47.1-1.08.17-3.14-.67-2.62-1.06-4.3-3.72-4.43-3.89-.13-.17-1.1-1.46-1.1-2.79 0-1.33.7-1.98 .94-2.25.24-.27.53-.34.7-.34h.5c.16 0 .38-.06.59.45.22.53.73 1.79.8 1.92.07.13.11.28.02.45-.09.17-.13.27-.26.42-.13.14-.27.32-.39.43-.13.12-.26.25-.11.49.15.24.66 1.09 1.42 1.76 1 .88 1.82 1.15 2.07 1.28.25.13.39.11.53-.07.14-.17.61-.71.77-.95.16-.24.32-.2.54-.12.22.08 1.41.67 1.65.79.24.12.4.18.46.28.06.1.06.6-.16 1.22z"/></svg>
-              Viber
-            </a>
-            <a className="contact__quickBtn contact__quickBtn--call" href="tel:+38269642892">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.94-1.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22.92 16z"/></svg>
-              Pozovi
-            </a>
-          </div>
-          <a className="contact__ig" href="https://www.instagram.com/extradent_podgorica/" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-            @extradent_podgorica
-          </a>
         </div>
         <div className="contact__map">
           <iframe
@@ -110,28 +111,31 @@ function Footer({ t }) {
             <div className="footer__tag">{t.footer.tagline}</div>
           </div>
         </div>
-        <div className="footer__cols">
-          <div>
-            <div className="footer__col">{t.contact.addressLab}</div>
-            <div className="footer__line">Njegoševa 18, Podgorica</div>
-          </div>
-          <div>
-            <div className="footer__col">{t.contact.phoneLab}</div>
-            <a className="footer__line" href="tel:+38220665625">+382 20 665 625</a>
-            <a className="footer__line" href="tel:+38269642892">+382 69 642 892</a>
-          </div>
-          <div>
-            <div className="footer__col">{t.contact.emailLab}</div>
-            <a className="footer__line" href="mailto:extradentpodgorica@gmail.com">extradentpodgorica@gmail.com</a>
-            <a className="footer__line" href="https://www.instagram.com/extradent_podgorica/" target="_blank" rel="noopener">@extradent_podgorica</a>
-          </div>
-        </div>
       </div>
       <div className="footer__bottom">
         <span>© {new Date().getFullYear()} Extradent. {t.footer.rights}</span>
         <span className="footer__made">{t.footer.made}</span>
       </div>
     </footer>
+  );
+}
+
+function MobileBottomBar() {
+  return (
+    <div className="mobileBar" role="navigation" aria-label="Quick contact">
+      <a className="contact__quickBtn contact__quickBtn--wa" href="https://wa.me/38269642892" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.932-1.418A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.946 7.946 0 0 1-4.073-1.118l-.292-.173-3.031.872.85-3.097-.19-.302A7.96 7.96 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
+        WhatsApp
+      </a>
+      <a className="contact__quickBtn contact__quickBtn--viber" href="viber://chat?number=38269642892" aria-label="Viber">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.996 2c-5.14 0-9.5 4.2-9.5 9.5 0 2.3.82 4.44 2.2 6.12L3 22l4.5-1.66A9.47 9.47 0 0 0 12 21.5c5.14 0 9.5-4.2 9.5-9.5S17.136 2 11.996 2zm4.68 13.27c-.22.62-1.08 1.14-1.76 1.28-.47.1-1.08.17-3.14-.67-2.62-1.06-4.3-3.72-4.43-3.89-.13-.17-1.1-1.46-1.1-2.79 0-1.33.7-1.98 .94-2.25.24-.27.53-.34.7-.34h.5c.16 0 .38-.06.59.45.22.53.73 1.79.8 1.92.07.13.11.28.02.45-.09.17-.13.27-.26.42-.13.14-.27.32-.39.43-.13.12-.26.25-.11.49.15.24.66 1.09 1.42 1.76 1 .88 1.82 1.15 2.07 1.28.25.13.39.11.53-.07.14-.17.61-.71.77-.95.16-.24.32-.2.54-.12.22.08 1.41.67 1.65.79.24.12.4.18.46.28.06.1.06.6-.16 1.22z"/></svg>
+        Viber
+      </a>
+      <a className="contact__quickBtn contact__quickBtn--call" href="tel:+38269642892" aria-label="Call">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.94-1.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22.92 16z"/></svg>
+        Pozovi
+      </a>
+    </div>
   );
 }
 
@@ -259,4 +263,5 @@ function BookingModal({ open, onClose, t }) {
 window.Reviews = Reviews;
 window.Contact = Contact;
 window.Footer = Footer;
+window.MobileBottomBar = MobileBottomBar;
 window.BookingModal = BookingModal;

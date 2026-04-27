@@ -42,6 +42,7 @@ function App() {
       <Reviews t={t} />
       <Contact t={t} onBook={() => setBookOpen(true)} />
       <Footer t={t} />
+      <MobileBottomBar />
       <BookingModal open={bookOpen} onClose={() => setBookOpen(false)} t={t} />
     </>
   );
