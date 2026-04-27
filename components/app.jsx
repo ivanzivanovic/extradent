@@ -42,7 +42,7 @@ function App() {
       <Reviews t={t} />
       <Contact t={t} onBook={() => setBookOpen(true)} />
       <Footer t={t} />
-      <MobileBottomBar />
+      <HeroQuickBar />
       <BookingModal open={bookOpen} onClose={() => setBookOpen(false)} t={t} />
     </>
   );
