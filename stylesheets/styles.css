@@ -856,6 +856,9 @@ section { padding: 120px 48px; position: relative; }
 .nav__themeSwitch.is-dark .nav__themeSwitchKnob {
   transform: translateX(34px);
 }
+@media (max-width: 1100px) {
+  .nav__themeSwitch { display: none; }
+}
 
 /* Mobile intro text above doctor image (About section) */
 .about__mobileIntro { display: none; }
@@ -887,8 +890,8 @@ section { padding: 120px 48px; position: relative; }
   text-decoration: none;
 }
 .contact__quickBtn:hover { opacity: 0.85; transform: translateY(-1px); }
-.contact__quickBtn--wa    { background: var(--bg-3); color: var(--ink); border: 2px solid #25D366; }
-.contact__quickBtn--viber { background: var(--bg-3); color: var(--ink); border: 2px solid #7360F2; }
+.contact__quickBtn--wa    { background: var(--bg-3); color: var(--ink); border: 3px solid #25D366; }
+.contact__quickBtn--viber { background: var(--bg-3); color: var(--ink); border: 3px solid #7360F2; }
 .contact__quickBtn--call  { background: var(--bg-3); color: var(--ink); border: 2px solid var(--line); }
 
 @media (max-width: 768px) {
