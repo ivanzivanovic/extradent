@@ -91,6 +91,7 @@ const TRANSLATIONS = {
       hoursWeekend: "Vikendom: po dogovoru",
       whatsapp: "Pošalji poruku na WhatsApp",
       call: "Pozovi nas",
+      openMaps: "Otvori u mapama",
     },
     footer: {
       tagline: "Stomatologija & estetska medicina lica · Podgorica",
@@ -188,6 +189,7 @@ const TRANSLATIONS = {
       hoursWeekend: "Weekends: by appointment",
       whatsapp: "Send a WhatsApp message",
       call: "Call us",
+      openMaps: "Open in Maps",
     },
     footer: {
       tagline: "Dentistry & facial aesthetic medicine · Podgorica",
@@ -285,6 +287,7 @@ const TRANSLATIONS = {
       hoursWeekend: "Выходные: по записи",
       whatsapp: "Написать в WhatsApp",
       call: "Позвонить",
+      openMaps: "Открыть в картах",
     },
     footer: {
       tagline: "Стоматология и эстетическая медицина · Подгорица",
@@ -382,6 +385,7 @@ const TRANSLATIONS = {
       hoursWeekend: "Hafta sonu: randevuyla",
       whatsapp: "WhatsApp mesajı gönder",
       call: "Bizi arayın",
+      openMaps: "Haritalarda aç",
     },
     footer: {
       tagline: "Diş hekimliği & yüz estetik tıbbı · Podgorica",

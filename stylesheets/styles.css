@@ -686,17 +686,20 @@ section { padding: 120px 48px; position: relative; }
   position: relative;
   aspect-ratio: 4/5;
   min-height: 500px;
+  width: 100%;
   border-radius: 4px; overflow: hidden;
   border: 1px solid var(--line);
   background: var(--bg-2);
 }
 @media (max-width: 768px) {
   .contact__map {
-    aspect-ratio: 16/11;
-    min-height: 240px;
-    max-height: 320px;
+    aspect-ratio: auto;
+    width: 100%;
+    height: 280px;
+    min-height: 0;
+    max-height: none;
   }
-  .contact__mapOverlay { bottom: 12px; left: 12px; right: 12px; padding: 12px 14px; }
+  .contact__mapOverlay { bottom: 12px; left: 12px; right: 12px; padding: 12px 14px; gap: 12px; }
   .contact__mapPin { width: 44px; height: 44px; }
   .contact__mapPin img { width: 32px; height: 32px; }
   .contact__mapTitle { font-size: 18px; }
@@ -710,7 +713,14 @@ section { padding: 120px 48px; position: relative; }
   background: var(--chrome-strong); backdrop-filter: blur(12px);
   border: 1px solid var(--line);
   border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+  font: inherit; color: inherit;
 }
+.contact__mapOverlay:hover { border-color: var(--gold); transform: translateY(-1px); }
+.contact__mapOverlay:active { transform: translateY(0); }
+.contact__mapInfo { flex: 1; min-width: 0; }
 .contact__mapPin {
   width: 60px; height: 60px;
   border-radius: 50%;
@@ -721,6 +731,12 @@ section { padding: 120px 48px; position: relative; }
 .contact__mapPin img { width: 44px; height: 44px; object-fit: contain; }
 .contact__mapTitle { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); line-height: 1.1; }
 .contact__mapAddr { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+.contact__mapOpen {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 8px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold);
+}
 
 /* Footer */
 .footer {

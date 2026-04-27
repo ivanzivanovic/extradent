@@ -26,6 +26,19 @@ function Reviews({ t }) {
   );
 }
 
+function openInMaps() {
+  const lat = 42.4415, lng = 19.2675;
+  const label = 'Extradent — Njegoševa 18, Podgorica';
+  const ua = navigator.userAgent || '';
+  if (/iPhone|iPad|iPod/i.test(ua)) {
+    window.location.href = `maps://?q=${encodeURIComponent(label)}&ll=${lat},${lng}`;
+  } else if (/Android/i.test(ua)) {
+    window.location.href = `geo:${lat},${lng}?q=${lat},${lng}(${encodeURIComponent(label)})`;
+  } else {
+    window.open(`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`, '_blank', 'noopener');
+  }
+}
+
 function Contact({ t, onBook }) {
   return (
     <section id="contact" className="contact">
@@ -85,15 +98,19 @@ function Contact({ t, onBook }) {
             style={{border: 0, width: '100%', height: '100%'}}
             loading="lazy"
           />
-          <div className="contact__mapOverlay">
+          <button type="button" className="contact__mapOverlay" onClick={openInMaps} aria-label={t.contact.openMaps}>
             <div className="contact__mapPin">
               <img src="images/logo-clean.png?v=4" alt="" />
             </div>
-            <div>
+            <div className="contact__mapInfo">
               <div className="contact__mapTitle">Extradent</div>
               <div className="contact__mapAddr">Njegoševa 18, Podgorica</div>
+              <div className="contact__mapOpen">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                {t.contact.openMaps}
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </section>
